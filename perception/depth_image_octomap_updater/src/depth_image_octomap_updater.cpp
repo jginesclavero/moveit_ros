@@ -263,7 +263,7 @@ void DepthImageOctomapUpdater::depthImageCallback(const sensor_msgs::ImageConstP
         try
         {
           tf2::fromMsg(tf_buffer_->lookupTransform(monitor_->getMapFrame(), depth_msg->header.frame_id,
-                                                   depth_msg->header.stamp),
+                                                   ros::Time(0)),
                        map_h_sensor);
           found = true;
           break;
